@@ -1,0 +1,73 @@
+<template>
+  <div>
+    <header>
+      <h1>ลงทะเบียนนักศึกษา</h1>
+    </header>
+    <FormComponent @save="addToList"></FormComponent>
+    <section class="student-content" v-if="student.length > 0">
+      <h2>ข้อมูลนักศึกษา</h2>
+      <ListStudent
+      :student="student"
+       @delete="remove"
+       ></ListStudent>
+    </section>
+  </div>
+</template>
+
+<script>
+import FormComponent from "./components/FormComponent.vue";
+import ListStudent from "./components/ListStudent.vue";
+export default {
+  name: "App",
+  components: {
+    FormComponent,
+    ListStudent,
+  },
+  data() {
+    return {
+      student: [],
+    };
+  },
+  methods: {
+    addToList(data) {
+      this.student.push(data);
+    },
+    remove(id){
+      this.student = this.student.filter(item=>{
+        return item.id !== id
+      })
+    }
+  },
+};
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 3rem;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: orangered;
+  color: #fff;
+  text-align: center;
+}
+.student-content {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 3rem;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+.student-content h2 {
+  font-size: 2rem;
+  border-bottom: 4px solid #ccc;
+  color: orangered;
+  margin: 0 0 1rem 0;
+}
+</style>

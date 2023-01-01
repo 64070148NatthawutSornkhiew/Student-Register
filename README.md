@@ -1,4 +1,4 @@
-# try-vue
+# ลงทะเบียนนักศึกษา
 
 ## Project setup
 ```

@@ -9,6 +9,7 @@
       <ListStudent
       :student="student"
        @delete="remove"
+       @showit="show"
        ></ListStudent>
     </section>
   </div>
@@ -26,6 +27,7 @@ export default {
   data() {
     return {
       student: [],
+    
     };
   },
   methods: {
@@ -35,6 +37,15 @@ export default {
     remove(id){
       this.student = this.student.filter(item=>{
         return item.id !== id
+      })
+    },
+    show(id){
+      // console.log(id+ this.student.name)
+      this.student = this.student.map((item)=>{
+        if(item.id === id){
+          return {...item,isVisible: !item.isVisible};
+        }
+        return item
       })
     }
   },
@@ -65,9 +76,10 @@ header {
   text-align: center;
 }
 .student-content h2 {
+  padding-bottom: 0.5rem;
   font-size: 2rem;
   border-bottom: 4px solid #ccc;
   color: orangered;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.75rem 0;
 }
 </style>

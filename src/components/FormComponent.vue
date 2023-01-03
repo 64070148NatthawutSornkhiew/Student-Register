@@ -72,21 +72,29 @@ export default {
                 id: "",
                 branch: "เทคโนโลยีสารสนเทศ",
                 saka: "เทคโนโลยีสารสนเทศ",
-                gender: "ชาย"
+                gender: "ชาย",
+                isVisible: false
             }
         }
     },
     methods: {
         sendData(){
-            const newStudent = {
-                name : this.student.name,
-                id: this.student.id,
-                branch: this.student.branch,
-                saka: this.student.saka,
-                gender: this.student.gender
+            if(this.student.name === "" || this.student.id === "" || isNaN(parseInt(this.student.id))){
+                alert("fill the form correctly")
             }
-            this.$emit("save", newStudent)
-            this.resetForm()
+            else{
+                const newStudent = {
+                    name : this.student.name,
+                    id: this.student.id,
+                    branch: this.student.branch,
+                    saka: this.student.saka,
+                    gender: this.student.gender,
+                    isVisible: false
+                }
+                this.$emit("save", newStudent)
+                this.resetForm()
+            }
+            
 
         },
         resetForm(){

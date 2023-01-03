@@ -8,7 +8,9 @@
       :branch="item.branch"
       :saka="item.saka"
       :gender="item.gender"
+      :isVisible="item.isVisible"
       @del="removeData"
+      @show="showDes"
     />
   </div>
 </template>
@@ -24,6 +26,9 @@ export default {
   methods:{
     removeData(id){
       this.$emit("delete", id)
+    },
+    showDes(id){
+      this.$emit("showit", id)
     }
   }
 };

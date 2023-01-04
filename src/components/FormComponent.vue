@@ -3,6 +3,8 @@
             <div class="form-control">
                 <label for="name">ชื่อนักศึกษา</label>
                 <input v-model.trim="this.student.name" type="text" placeholder="ณัฐวุฒิ สอนเขียว" />
+                <!-- <input @keyup.enter="ฟังก์ชั่นต่างๆ" type="text" placeholder="ณัฐวุฒิ สอนเขียว" /> -->
+                <!-- กด enter ก็ทำฟังก์ชั่นได้  -->
             </div>
 
             <div class="form-control">
@@ -55,6 +57,8 @@
 
             <div class="control-button" >
                 <button>ลงทะเบียน</button>
+                <!-- <button :disabled="student.name.length < 1">ลงทะเบียน</button> -->
+                <!-- จะ disable button ถ้าตรงเงื่อนไขด้านใน -->
             </div>
             
         </form>

@@ -18,7 +18,7 @@
     </template>
 
     <template v-slot:card-button>
-      <button class="btn-remove" @click="delData(id)">ลบข้อมูล</button>
+      <button class="btn-remove" @click="delData(id)">Delete</button>
     </template>
   </CardStudent>
 </template>

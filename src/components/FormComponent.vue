@@ -1,57 +1,57 @@
 <template>
         <form @submit.prevent="sendData()">
             <div class="form-control">
-                <label for="name">ชื่อนักศึกษา</label>
+                <label for="name">Name</label>
                 <input v-model.trim="this.student.name" type="text" placeholder="ณัฐวุฒิ สอนเขียว" />
                 <!-- <input @keyup.enter="ฟังก์ชั่นต่างๆ" type="text" placeholder="ณัฐวุฒิ สอนเขียว" /> -->
                 <!-- กด enter ก็ทำฟังก์ชั่นได้  -->
             </div>
 
             <div class="form-control">
-                <label for="id">รหัสนักศึกษา</label>
+                <label for="id">Student ID</label>
                 <input v-model.trim="this.student.id" type="text" placeholder="64070148" />
             </div>
 
             <div class="form-control">
-                <h2>เพศ</h2>
+                <h2>Gender</h2>
                 <div>
                     <input type="radio" value="ชาย" v-model="student.gender" checked>
-                    <label for="male">ชาย</label>
+                    <label for="male">Male</label>
                 </div>
                 
                 <div>
                     <input type="radio" value="หญิง" v-model="student.gender">
-                    <label for="male">หญิง</label>
+                    <label for="male">Female</label>
                 </div>
 
             </div>
 
             <div class="form-control">
-                <label for="kana">คณะ</label>
+                <label for="kana">faculty</label>
                 <select v-model="student.branch">
-                    <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
-                    <option value="วิศวะ">วิศวะ</option>
+                    <option value="เทคโนโลยีสารสนเทศ">Infomation Technology</option>
+                    <option value="วิศวะ">Engineer</option>
                 </select>
 
             </div>
 
             <div v-if="this.student.branch === 'เทคโนโลยีสารสนเทศ'" class="form-control">
-                <label for="saka">สาขา</label>
+                <label for="saka">Branch</label>
                 <select v-model="this.student.saka">
                     {{ setSaka }}
-                    <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
+                    <option value="เทคโนโลยีสารสนเทศ">Infomation Technology</option>
                     <option value="DSBA">DSBA</option>
                     <option value="BIT">BIT</option>
                 </select>
             </div>
 
             <div v-else class="form-control">
-                <label for="saka">สาขา</label>
+                <label for="saka">Branch</label>
                 <select v-model="this.student.saka">
                     {{ setSaka }}
-                    <option value="วิศวะคอม">วิศวะคอม</option>
-                    <option value="วิศวะแมคคา">วิศวะแมคคา</option>
-                    <option value="วิศวะเคมี">วิศวะเคมี</option>
+                    <option value="วิศวะคอม">Computer Engineer</option>
+                    <option value="วิศวะแมคคา">Mechatronics Engineer</option>
+                    <option value="วิศวะเคมี">Chemical Engineer</option>
                 </select>
             </div>
 

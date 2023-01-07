@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>ลงทะเบียนนักศึกษา</h1>
+      <h1>Student Registor</h1>
     </header>
     <FormComponent @save="addToList"></FormComponent>
     <section class="student-content" v-if="student.length > 0">
@@ -53,11 +53,13 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
+  font-family: 'Slabo 27px', serif;
 }
 header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);

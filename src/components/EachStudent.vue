@@ -53,8 +53,9 @@ export default {
   },
   methods: {
     delData(id) {
+      // console.log(id+"3")
       this.$emit("del", id);
-      // console.log(id)
+      
     },
     showData(id) {
       this.$emit("show", id);

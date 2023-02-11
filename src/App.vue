@@ -35,6 +35,7 @@ export default {
       this.student.push(data);
     },
     remove(id){
+      // console.log(id+"1");
       this.student = this.student.filter(item=>{
         return item.id !== id
       })

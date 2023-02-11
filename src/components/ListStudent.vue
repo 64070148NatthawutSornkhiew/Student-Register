@@ -9,7 +9,7 @@
       :saka="item.saka"
       :gender="item.gender"
       :isVisible="item.isVisible"
-      @del="removeData"
+      @del="$emit('delete', item.id)"
       @show="showDes"
     />
   </div>
@@ -24,9 +24,10 @@ export default {
   },
   props: ["student"],
   methods:{
-    removeData(id){
-      this.$emit("delete", id)
-    },
+    // removeData(id){
+    //   console.log(id+"2");
+    //   this.$emit("delete", id)
+    // },
     showDes(id){
       this.$emit("showit", id)
     }
